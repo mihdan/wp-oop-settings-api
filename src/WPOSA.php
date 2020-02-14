@@ -8,7 +8,7 @@
  * @package WPOSA
  */
 
-namespace Mihdan\WP_OSA;
+namespace Mihdan\WPOSA;
 
 /**
  * WP_OSA.
@@ -18,9 +18,9 @@ namespace Mihdan\WP_OSA;
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'WP_OSA' ) ) :
+if ( ! class_exists( 'WPOSA' ) ) :
 
-	class WP_OSA {
+	class WPOSA {
 
 		/**
 		 * Sections array.
