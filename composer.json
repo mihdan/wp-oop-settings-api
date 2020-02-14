@@ -12,5 +12,10 @@
             "name": "Ahmad Awais",
             "email": "me@AhmadAwais.com"
         }
-    ]
+    ],
+    "autoload"    : {
+		"psr-4" : {
+			"WP_OSA\\" : ""
+		}
+	},
 }
