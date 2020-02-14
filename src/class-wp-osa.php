@@ -8,10 +8,7 @@
  * @package WPOSA
  */
 
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+namespace Mihdan\WP_OSA;
 
 /**
  * WP_OSA.

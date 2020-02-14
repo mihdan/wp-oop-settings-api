@@ -15,7 +15,7 @@
     ],
     "autoload"    : {
 		"psr-4" : {
-			"WP_OSA\\" : ""
+			"Mihdan\\WP_OSA\\" : "src/"
 		}
-	},
+	}
 }
