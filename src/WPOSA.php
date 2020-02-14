@@ -23,6 +23,27 @@ if ( ! class_exists( 'WPOSA' ) ) :
 	class WPOSA {
 
 		/**
+		 * Plugin name.
+		 *
+		 * @var string
+		 */
+		private $plugin_name;
+
+		/**
+		 * Plugin version.
+		 *
+		 * @var string
+		 */
+		private $plugin_version;
+
+		/**
+		 * Plugin slug.
+		 *
+		 * @var string
+		 */
+		private $plugin_slug;
+
+		/**
 		 * Sections array.
 		 *
 		 * @var   array
@@ -41,9 +62,17 @@ if ( ! class_exists( 'WPOSA' ) ) :
 		/**
 		 * Constructor.
 		 *
+		 * @param string $plugin_name Plugin name.
+		 * @param string $plugin_version Pluign version.
+		 * @param string $plugin_slug Plugin slug.
+		 *
 		 * @since  1.0.0
 		 */
-		public function __construct() {
+		public function __construct( $plugin_name = 'WPOSA', $plugin_version = '0.1', $plugin_slug = 'WPOSA' ) {
+			$this->plugin_name    = $plugin_name;
+			$this->plugin_version = $plugin_version;
+			$this->plugin_slug    = $plugin_slug;
+
 			// Enqueue the admin scripts.
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 
@@ -712,17 +741,17 @@ if ( ! class_exists( 'WPOSA' ) ) :
 		public function admin_menu() {
 			// add_options_page( $page_title, $menu_title, $capability, $menu_slug, array( $this, $callable ) );
 			add_options_page(
-				'WP OOP Settings API',
-				'WP OOP Settings API',
+				$this->plugin_name,
+				$this->plugin_name,
 				'manage_options',
-				'wp_osa_settings',
+				$this->plugin_slug,
 				array( $this, 'plugin_page' )
 			);
 		}
 
 		public function plugin_page() {
 			echo '<div class="wrap">';
-			echo '<h1>WP OOP Settings API <span style="font-size:50%;">v' . WPOSA_VERSION . '</span></h1>';
+			echo '<h1>' . $this->plugin_name . ' <span style="font-size:50%;">v' . $this->plugin_version . '</span></h1>';
 			$this->show_navigation();
 			$this->show_forms();
 			echo '</div>';
