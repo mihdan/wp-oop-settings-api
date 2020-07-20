@@ -780,12 +780,21 @@ if ( ! class_exists( 'WPOSA' ) ) :
 		 * This function displays every sections in a different form
 		 */
 		function show_forms() {
+			$default = array(
+				'label_submit' => null,
+				'submit_type'  => 'primary',
+				'wrap'         => true,
+				'attributes'   => null,
+			);
 			?>
 			<div class="metabox-holder">
-				<?php foreach ( $this->sections_array as $form ) { ?>
+				<?php foreach ( $this->sections_array as $form ) : ?>
+					<?php
+					$form = wp_parse_args( $form, $default );
+					?>
 					<!-- style="display: none;" -->
 					<div id="<?php echo $form['id']; ?>" class="group" >
-						<form method="post" action="options.php">
+						<form method="post" action="<?php echo esc_url( admin_url( 'options.php' ) ); ?>">
 							<?php
 							do_action( 'wsa_form_top_' . $form['id'], $form );
 							settings_fields( $form['id'] );
@@ -793,11 +802,11 @@ if ( ! class_exists( 'WPOSA' ) ) :
 							do_action( 'wsa_form_bottom_' . $form['id'], $form );
 							?>
 							<div style="padding-left: 10px">
-								<?php submit_button(null, 'primary', 'submit_'.$form['id']); ?>
+								<?php submit_button( $form['label_submit'], $form['submit_type'], 'submit_' . $form['id'], $form['wrap'], $form['attributes'] ); ?>
 							</div>
 						</form>
 					</div>
-				<?php } ?>
+				<?php endforeach; ?>
 			</div>
 			<?php
 			$this->script();

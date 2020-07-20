@@ -5,12 +5,14 @@
  * Description: Settings API wrapper built with Object Oriented Programming practices.
  * Author: mrahmadawais, WPTie, deviodigital
  * Author URI: http://AhmadAwais.com/
- * Version: 1.0.0
+ * Version: 1.0.4
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @package WPOSA
  */
+
+namespace Mihdan\WPOSA;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 // Plugin version.
 if ( ! defined( 'WPOSA_VERSION' ) ) {
-	define( 'WPOSA_VERSION', '1.0.0' );
+	define( 'WPOSA_VERSION', '1.0.4' );
 }
 
 if ( ! defined( 'WPOSA_NAME' ) ) {
