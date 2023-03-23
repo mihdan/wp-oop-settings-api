@@ -10,8 +10,6 @@
 
 > Ever wanted to build custom settings inside your WordPress plugin or theme and didn't like the non-DRY approach for creating custom settings via WordPress API? Well, that's why and when I wrote this OOP Wrapper for WordPress Settings API. 🎊
 
-![Screenshots](https://on.ahmda.ws/qPBC/c)
-
 ## Screenshots
 
 ![](https://i.imgur.com/EXUoeLZ.png)
@@ -40,7 +38,7 @@
 - [ ] Tutorials
 - [ ] Blog post
 - [ ] Documentation
-- [ ] Re-factor the code with WP Standards
+- [x] Re-factor the code with WP Standards
 - [ ] Re-factor the code into classes
 
 ![License](https://on.ahmda.ws/qNys/c)
