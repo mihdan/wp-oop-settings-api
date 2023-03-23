@@ -6,6 +6,20 @@
 
 > Ever wanted to build custom settings inside your WordPress plugin or theme and didn't like the non-DRY approach for creating custom settings via WordPress API? Well, that's why and when I wrote this OOP Wrapper for WordPress Settings API. 🎊
 
+## Documentation
+
+#### Sidebar
+
+```php
+$wposa->add_sidebar_card(
+  [
+    'id'    => 'donate',
+    'title' => __( 'Enjoyed WPOSA?', 'wposa' ),
+    'desc'  => __( '<p>Please leave us a <a href="https://wordpress.org/support/plugin/mihdan-index-now/reviews/#new-post" target="_blank" title="Rate &amp; review it">★★★★★</a> rating. We really appreciate your support</p>', 'wposa' ),
+  ]
+);
+```
+
 ## Screenshots
 
 ![](https://i.imgur.com/EXUoeLZ.png)
