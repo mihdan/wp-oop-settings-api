@@ -1,21 +1,45 @@
 {
-    "name": "mihdan/wp-oop-settings-api",
-    "description": "WP-OOP-Settings-API is a Settings API wrapper built with Object Oriented Programming practices.",
-    "type": "library",
-    "license": "GPL-2.0",
-    "authors": [
-        {
-            "name": "Mikhail Kobzarev",
-            "email": "mikhail@kobzarev.com"
-        },
-        {
-            "name": "Ahmad Awais",
-            "email": "me@AhmadAwais.com"
-        }
-    ],
-    "autoload"    : {
-		"psr-4" : {
-			"Mihdan\\WPOSA\\" : "src/"
-		}
-	}
+  "name": "mihdan/wp-oop-settings-api",
+  "description": "WP-OOP-Settings-API is a Settings API wrapper built with Object Oriented Programming practices.",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Mikhail Kobzarev",
+      "email": "mikhail@kobzarev.com"
+    },
+    {
+      "name": "Ahmad Awais",
+      "email": "me@AhmadAwais.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mihdan\\WPOSA\\": "src/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "^3.6",
+    "phpcompatibility/php-compatibility": "^9.3",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "wp-coding-standards/wpcs": "^2.3",
+    "php-coveralls/php-coveralls": "^v2.4",
+    "vimeo/psalm": "^4.20",
+    "humanmade/psalm-plugin-wordpress": "^2.0"
+  },
+  "scripts": {
+    "phpcs": "phpcs --standard=./phpcs.xml",
+    "phpcbf": "phpcbf --standard=./phpcs.xml",
+    "psalm": "psalm --config=./psalm.xml"
+  }
 }
